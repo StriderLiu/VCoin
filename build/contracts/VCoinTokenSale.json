@@ -1,0 +1,618 @@
+{
+  "contractName": "VCoinTokenSale",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "tokenContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x55a373d6"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_tokenContract",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516020806101bb8339810180604052602081101561003057600080fd5b8101908080519060200190929190505050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505060ea806100d16000396000f3fe608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806355a373d6146044575b600080fd5b348015604f57600080fd5b5060566098565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a7230582049865787278a5ad5d19b157689f8b4bc8f9c58093c98960c8122c0827a168e510029",
+  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806355a373d6146044575b600080fd5b348015604f57600080fd5b5060566098565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a7230582049865787278a5ad5d19b157689f8b4bc8f9c58093c98960c8122c0827a168e510029",
+  "sourceMap": "62:384:2:-;;;244:199;8:9:-1;5:2;;;30:1;27;20:12;5:2;244:199:2;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;244:199:2;;;;;;;;;;;;;;;;327:10;319:5;;:18;;;;;;;;;;;;;;;;;;359:14;343:13;;:30;;;;;;;;;;;;;;;;;;244:199;62:384;;;;;;",
+  "deployedSourceMap": "62:384:2:-;;;;;;;;;;;;;;;;;;;;;;;;191:31;;8:9:-1;5:2;;;30:1;27;20:12;5:2;191:31:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.21 <0.6.0;\n\nimport \"./VCoinToken.sol\";\n\ncontract VCoinTokenSale {\n  // fields vars will be persisted through blockchain and come with getter function\n  address admin;\n  VCoinToken public tokenContract;\n\n  // Constructor\n  constructor(VCoinToken _tokenContract) public {\n    // Assign an admin\n    admin = msg.sender;\n    tokenContract = _tokenContract;\n    // Add a reference to the Token contract\n    // Token prices\n  }\n\n}\n",
+  "sourcePath": "/Users/strider/Documents/BlockChain/VCoin/contracts/VCoinTokenSale.sol",
+  "ast": {
+    "absolutePath": "/Users/strider/Documents/BlockChain/VCoin/contracts/VCoinTokenSale.sol",
+    "exportedSymbols": {
+      "VCoinTokenSale": [
+        262
+      ]
+    },
+    "id": 263,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 241,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:2"
+      },
+      {
+        "absolutePath": "/Users/strider/Documents/BlockChain/VCoin/contracts/VCoinToken.sol",
+        "file": "./VCoinToken.sol",
+        "id": 242,
+        "nodeType": "ImportDirective",
+        "scope": 263,
+        "sourceUnit": 240,
+        "src": "34:26:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 262,
+        "linearizedBaseContracts": [
+          262
+        ],
+        "name": "VCoinTokenSale",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 244,
+            "name": "admin",
+            "nodeType": "VariableDeclaration",
+            "scope": 262,
+            "src": "174:13:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 243,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "174:7:2",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 246,
+            "name": "tokenContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 262,
+            "src": "191:31:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_VCoinToken_$239",
+              "typeString": "contract VCoinToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 245,
+              "name": "VCoinToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 239,
+              "src": "191:10:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_VCoinToken_$239",
+                "typeString": "contract VCoinToken"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 260,
+              "nodeType": "Block",
+              "src": "290:153:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 254,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 251,
+                      "name": "admin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 244,
+                      "src": "319:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 252,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 277,
+                        "src": "327:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 253,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "327:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "319:18:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 255,
+                  "nodeType": "ExpressionStatement",
+                  "src": "319:18:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 258,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 256,
+                      "name": "tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 246,
+                      "src": "343:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_VCoinToken_$239",
+                        "typeString": "contract VCoinToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 257,
+                      "name": "_tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 248,
+                      "src": "359:14:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_VCoinToken_$239",
+                        "typeString": "contract VCoinToken"
+                      }
+                    },
+                    "src": "343:30:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_VCoinToken_$239",
+                      "typeString": "contract VCoinToken"
+                    }
+                  },
+                  "id": 259,
+                  "nodeType": "ExpressionStatement",
+                  "src": "343:30:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 261,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 249,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 248,
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 261,
+                  "src": "256:25:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_VCoinToken_$239",
+                    "typeString": "contract VCoinToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 247,
+                    "name": "VCoinToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 239,
+                    "src": "256:10:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_VCoinToken_$239",
+                      "typeString": "contract VCoinToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "255:27:2"
+            },
+            "returnParameters": {
+              "id": 250,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "290:0:2"
+            },
+            "scope": 262,
+            "src": "244:199:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 263,
+        "src": "62:384:2"
+      }
+    ],
+    "src": "0:447:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/strider/Documents/BlockChain/VCoin/contracts/VCoinTokenSale.sol",
+    "exportedSymbols": {
+      "VCoinTokenSale": [
+        262
+      ]
+    },
+    "id": 263,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 241,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:2"
+      },
+      {
+        "absolutePath": "/Users/strider/Documents/BlockChain/VCoin/contracts/VCoinToken.sol",
+        "file": "./VCoinToken.sol",
+        "id": 242,
+        "nodeType": "ImportDirective",
+        "scope": 263,
+        "sourceUnit": 240,
+        "src": "34:26:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 262,
+        "linearizedBaseContracts": [
+          262
+        ],
+        "name": "VCoinTokenSale",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 244,
+            "name": "admin",
+            "nodeType": "VariableDeclaration",
+            "scope": 262,
+            "src": "174:13:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 243,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "174:7:2",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 246,
+            "name": "tokenContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 262,
+            "src": "191:31:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_VCoinToken_$239",
+              "typeString": "contract VCoinToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 245,
+              "name": "VCoinToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 239,
+              "src": "191:10:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_VCoinToken_$239",
+                "typeString": "contract VCoinToken"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 260,
+              "nodeType": "Block",
+              "src": "290:153:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 254,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 251,
+                      "name": "admin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 244,
+                      "src": "319:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 252,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 277,
+                        "src": "327:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 253,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "327:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "319:18:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 255,
+                  "nodeType": "ExpressionStatement",
+                  "src": "319:18:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 258,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 256,
+                      "name": "tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 246,
+                      "src": "343:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_VCoinToken_$239",
+                        "typeString": "contract VCoinToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 257,
+                      "name": "_tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 248,
+                      "src": "359:14:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_VCoinToken_$239",
+                        "typeString": "contract VCoinToken"
+                      }
+                    },
+                    "src": "343:30:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_VCoinToken_$239",
+                      "typeString": "contract VCoinToken"
+                    }
+                  },
+                  "id": 259,
+                  "nodeType": "ExpressionStatement",
+                  "src": "343:30:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 261,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 249,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 248,
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 261,
+                  "src": "256:25:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_VCoinToken_$239",
+                    "typeString": "contract VCoinToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 247,
+                    "name": "VCoinToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 239,
+                    "src": "256:10:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_VCoinToken_$239",
+                      "typeString": "contract VCoinToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "255:27:2"
+            },
+            "returnParameters": {
+              "id": 250,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "290:0:2"
+            },
+            "scope": 262,
+            "src": "244:199:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 263,
+        "src": "62:384:2"
+      }
+    ],
+    "src": "0:447:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "1551314124086": {
+      "events": {},
+      "links": {},
+      "address": "0x49dA1f9c61C803F1254b47c39a4f3b0e98E49C9f",
+      "transactionHash": "0x17afaca18ec2ee8e093499bb6083f067b7a7165bf1a2af55c7af8d1243204b57"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-02-28T12:57:48.775Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
