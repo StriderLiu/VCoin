@@ -55,7 +55,7 @@ contract VCoinTokenSale {
     // whereas conversions from address to address payable are not possible
     //(the only way to perform such a conversion is by using an intermediate conversion to uint160).
     // https://ethereum.stackexchange.com/questions/62222/address-payable-type-store-address-and-send-later-using-solidity-0-5-0
-    selfdestruct(address(uint160(admin)));
+    /* selfdestruct(address(uint160(admin))); */
 
     /* // UPDATE: Let's not destroy the contract here
     // Just transfer the balance to the admin

@@ -108,20 +108,30 @@ App = {
     });
   },
 
-  buyTokens: function() {
+  transferTokens: function() {
     $('#content').hide();
     $('#loader').show();
+    var toAccount = $('#toAccount').val();
     var numberOfTokens = $('#numberOfTokens').val();
+
     App.contracts.VCoinTokenSale.deployed().then(function(instance) {
       return instance.buyTokens(numberOfTokens, {
-        from: App.account,
+        from: App.address,
         value: numberOfTokens * App.tokenPrice,
         gas: 500000 // Gas limit
       });
     }).then(function(result) {
-      console.log("Tokens bought...")
+      console.log("Tokens bought..." + App.contracts.VCoinToken.balanceOf(toAccount))
       $('form').trigger('reset') // reset number of tokens in form
       // Wait for Sell event
+    });
+
+    App.contracts.VCoinToken.deployed().then(function(instance) {
+      return instance.transfer(toAccount, numberOfTokens, {
+        from: App.account
+      });
+    }).then(function(result) {
+      console.log("Transfer tokens...")
     });
   }
 }

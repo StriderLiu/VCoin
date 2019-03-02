@@ -77,15 +77,20 @@ contract('VCoinTokenSale', function(accounts) {
       // End sale as admin
       return tokenSaleInstance.endSale({ from: admin });
     }).then(function(receipt) {
-      return tokenInstance.balanceOf(admin);
-    }).then(function(balance) {
+      return admin;
+    }).then(function(addr) {
+      assert.equal(addr, 0x0b7882c25c869c743fb9862629665b4123b3bd47, 'admin still exists');
+      // return tokenInstance.balanceOf(admin);
+    // }).then(function(balance) {
       // assert.equal(balance.toNumber(), 999990, 'returns all unsold dapp tokens to admin');
       // Check that the contract has no balance
-      balance = web3.eth.getBalance(tokenSaleInstance.address)
-      assert.equal(balance.toNumber(), 0);
-      return tokenInstance.balanceOf(tokenSaleInstance.address)
-    }).then(function(amount) {
-      assert.equal(amount, 0, 'all tokens should be returned back to admin');
+      return tokenInstance.balanceOf(tokenSaleInstance.address);
+    }).then(function(balance) {
+      assert.equal(balance.toNumber(), 0, 'now the balance of token sale contract should be cleared out');
+      // return tokenSaleInstance.tokenPrice();
     });
+    // }).then(function(price) {
+    //   assert.equal(price.toNumber(), 0, 'token price was reset');
+    // });
   });
 });
