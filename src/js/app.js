@@ -30,14 +30,14 @@ App = {
       App.contracts.VCoinTokenSale = TruffleContract(VCoinTokenSale);
       App.contracts.VCoinTokenSale.setProvider(App.web3Provider);
       App.contracts.VCoinTokenSale.deployed().then(function(VCoinTokenSale) {
-        console.log("Dapp Token Sale Address:", VCoinTokenSale.address);
+        console.log("VCoin Token Trade Hub Address:", VCoinTokenSale.address);
       });
     }).done(function() {
       $.getJSON("VCoinToken.json", function(VCoinToken) {
         App.contracts.VCoinToken = TruffleContract(VCoinToken);
         App.contracts.VCoinToken.setProvider(App.web3Provider);
         App.contracts.VCoinToken.deployed().then(function(VCoinToken) {
-          console.log("Dapp Token Address:", VCoinToken.address);
+          console.log("VCoin Token Address:", VCoinToken.address);
         });
 
         App.listenForEvents();
@@ -77,7 +77,7 @@ App = {
         App.account = account;
         $('#accountAddress').html("Your Account: " + account);
       }
-    })
+    });
 
     // Load token sale contract
     App.contracts.VCoinTokenSale.deployed().then(function(instance) {
@@ -108,33 +108,48 @@ App = {
     });
   },
 
-  transferTokens: function() {
+  buyTokens: function() {
     $('#content').hide();
     $('#loader').show();
-    var toAccount = $('#toAccount').val();
-    var numberOfTokens = $('#numberOfTokens').val();
+    var numberOfTokens = $('#numberOfTokensToBuy').val();
 
     App.contracts.VCoinTokenSale.deployed().then(function(instance) {
       return instance.buyTokens(numberOfTokens, {
-        from: App.address,
+        from: App.account,
         value: numberOfTokens * App.tokenPrice,
         gas: 500000 // Gas limit
       });
     }).then(function(result) {
-      console.log("Tokens bought..." + App.contracts.VCoinToken.balanceOf(toAccount))
+      console.log("Tokens bought...")
       $('form').trigger('reset') // reset number of tokens in form
       // Wait for Sell event
-    });
 
+      $('#content').show();
+      $('#loader').hide();
+    });
+  },
+
+  transferTokens: function() {
+    $('#content').hide();
+    $('#loader').show();
+    var toAccount = $('#toAccount').val();
+    var numberOfTokens = $('#numberOfTokensToTransfer').val();
     App.contracts.VCoinToken.deployed().then(function(instance) {
       return instance.transfer(toAccount, numberOfTokens, {
         from: App.account
       });
     }).then(function(result) {
       console.log("Transfer tokens...")
+      $('form').trigger('reset') // reset number of tokens in form
+      // Wait for Transfer event
+
+      $('#content').show();
+      $('#loader').hide();
     });
   }
 }
+
+
 
 $(function() {
   $(window).load(function() {
