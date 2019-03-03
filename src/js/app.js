@@ -111,10 +111,12 @@ App = {
   buyTokens: function() {
     $('#content').hide();
     $('#loader').show();
+    var tokenSaleInstance;
     var numberOfTokens = $('#numberOfTokensToBuy').val();
 
     App.contracts.VCoinTokenSale.deployed().then(function(instance) {
-      return instance.buyTokens(numberOfTokens, {
+      tokenSaleInstance = instance;
+      return tokenSaleInstance.buyTokens(numberOfTokens, {
         from: App.account,
         value: numberOfTokens * App.tokenPrice,
         gas: 500000 // Gas limit
@@ -132,10 +134,12 @@ App = {
   transferTokens: function() {
     $('#content').hide();
     $('#loader').show();
+    var tokenInstance;
     var toAccount = $('#toAccount').val();
     var numberOfTokens = $('#numberOfTokensToTransfer').val();
     App.contracts.VCoinToken.deployed().then(function(instance) {
-      return instance.transfer(toAccount, numberOfTokens, {
+      tokenInstance = instance;
+      return tokenInstance.transfer(toAccount, numberOfTokens, {
         from: App.account
       });
     }).then(function(result) {
@@ -145,11 +149,14 @@ App = {
 
       $('#content').show();
       $('#loader').hide();
+      // return tokenInstance.balanceOf(toAccount.address);
+    // })
+    // .then(function(err, balance) {
+    //   $('#transferSuccess').html(balance.toNumber());
+    //   $('#sucessulTransferMsg').show();
     });
   }
 }
-
-
 
 $(function() {
   $(window).load(function() {
